@@ -22,11 +22,13 @@ func characterCount(phrase: String) -> String {
 characterCount("How many characters are in this phrase?")
 
 func reverseString(phrase: String) -> String {
-    for index in phrase.characters {
-        var reversedString: String
-        print(index)
-//        reversedString.insert(character, atIndex: 0)
-        return "test"
+    var stringReversed = ""
+    for character in phrase.characters {
+        stringReversed.insert(character, atIndex: stringReversed.startIndex)
+        print(character)
     }
+    return stringReversed
 }
 
+reverseString("hello")
+reverseString("hannah")

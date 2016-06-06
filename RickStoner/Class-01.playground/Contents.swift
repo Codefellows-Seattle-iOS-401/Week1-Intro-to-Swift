@@ -32,3 +32,10 @@ func reverseString(phrase: String) -> String {
 
 reverseString("hello")
 reverseString("hannah")
+
+
+var greetings: (String) -> String
+greetings = {(name) -> String in
+    return "Greetings, \(name)"
+}
+greetings("")

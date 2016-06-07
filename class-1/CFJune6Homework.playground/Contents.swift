@@ -14,24 +14,22 @@ func convert(string: String) -> Int? {
 }
 
 convert("6")
-
-
+convert("BOOYAH")
 
 // Write a function that takes in a tuple (code, message) and returns a string by using interpolation
 
-func interpolation(text: String, num: Int) -> String {
-    return "\(text)"
+func interpolation(code: Int, message: String) -> String {
+    return "\(code) \(message)"
 }
 
-interpolation("hey", num: 4)
+interpolation(500, message: "Internal Server Error.")
 
 
 
 // Write a function that takes in a string, and returns a message: “String contains n characters”
 
 func numberOfCharacters(countedString: String) -> String {
-    let message = "String contains " + "\(countedString.characters.count)" + " characters."
-    return message
+    return "String contains " + "\(countedString.characters.count)" + " characters."
 }
 
 numberOfCharacters("Hey")
@@ -54,4 +52,13 @@ reverse("Hello")
 // Bonus \\
 
 // Declare a variable that’s function. Implement function to take in a string (name) and return greeting message
+
+func welcome(name: String) -> String {
+    return "Welcome, \(name)!"
+}
+
+var varFunc: String -> String = welcome
+
+varFunc("Jake")
+
 

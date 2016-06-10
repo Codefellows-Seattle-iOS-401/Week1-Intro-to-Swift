@@ -70,6 +70,21 @@ for word in arr {
 }
 
 
+let input = ["one", "two", "three", "one"]  // the outcome should be: print one = 2
+
+func countRepeat(input: [String]) -> [String : Int] {
+    var repeating = [String : Int]()
+    for word in input {
+        if repeating[word] == nil {
+            repeating[word] = 1
+        } else {
+            repeating[word]! + 1
+        }
+    }
+}
+
+
+
 // Add two numbers without using “+”
 
 var firstNumber = 15

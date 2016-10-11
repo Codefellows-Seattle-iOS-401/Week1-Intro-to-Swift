@@ -40,6 +40,14 @@ func tupleFunc (first: Int, second: Int) -> Int {
 
 tupleFunc(first: 1,second: 1)
 
+func betterTupleFunc (tuple:(a: Int, b: Int)) -> Int {
+    return tuple.a + tuple.b
+}
+
+betterTupleFunc(tuple: (a: 1, b: 1))
+
+let taple = (10, 10)
+
 
 
 // Write a function that takes in a string, and returns a message: “String contains n characters”
@@ -60,6 +68,8 @@ for character in "hello".characters {
     hold = String(character) + hold
 }
 hold
+
+let answer = (true && 1 != 2) || (4 > 3 && 100 < 1)
 
 
 

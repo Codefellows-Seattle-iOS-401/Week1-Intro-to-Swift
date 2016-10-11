@@ -39,7 +39,7 @@ let symetic = setA.symmetricDifference(setB)
 //Write a function that takes in an array of planet names as strings, checks if array contains “Earth”. If it does not, add it. Otherwise, do nothing.
 
 
-var planetArray = ["Mars", "Uranus", "...Getit?", "Mars"]
+var planetArray = ["Mars", "Uranus", "...Getit?", "Mars", "Uranus"]
 
 func addEarth (planet: String) -> [String] {
     if !planetArray.contains("Earth") {
@@ -83,9 +83,21 @@ search(key:"Aardvark")
 //Write a function that counts repeating words in an array of strings, and prints out the count of each
 
 
-var repeatedStrings = Array(Set(planetArray.filter({ (i: String) in planetArray.filter({ $0 == i }).count > 1}))).count
+func repeatFunction (planet: String) -> Int {
+    var count = 0
+    for x in planetArray {
+        if x == planet {
+            count += 1
+        }
+    }
+    return count
+}
 
-repeatedStrings
+repeatFunction(planet: "Mars")
+
+
+
+
 
 
 

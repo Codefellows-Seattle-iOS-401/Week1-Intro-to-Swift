@@ -1,11 +1,10 @@
-
-
-/// Class 1 Homework/Lab \\\
-
 import UIKit
-
-
 /*
+                        Class 1 Homework/Lab
+                            10/10/16
+
+ 
+ #CODECHALLENGES
  
  1) Write a function that takes in a string, checks if it can be converted to a number, and returns a optional number
  
@@ -19,26 +18,30 @@ import UIKit
 
 
 
-// Problem 1 \\
+                //// Problem 1 \\\\
 
 func stringFunc(aString: String) -> Int? {
     return Int(aString)
 }
 stringFunc(aString: "hello")
 stringFunc(aString: "10")
+//stringFunc(aString: 20) // cannot do because input is not a string
 
 
 
-// Problem 2 \\
+                //// Problem 2 \\\\
 
-func tupleTaker(integer1: Int, integer2: Int) -> Int {
-    return integer1 + integer2
+//let tuple : (a: Int, b: Int)
+
+func tupleAdder(a: Int, b: Int) -> Int {
+    return a + b
 }
-tupleTaker(integer1: 40, integer2: 31)
+tupleAdder(a: 30, b: 41)
+tupleAdder(a: 56, b: 93)
 
 
 
-// Problem 3 \\
+                //// Problem 3 \\\\
 
 func stringTaker(bString: String) -> String {
     //print(bString)
@@ -50,7 +53,9 @@ stringTaker(bString: "Hello")
 
 
 
-// Problem 4 \\
+                //// Problem 4 \\\\
+
+//my solution
 
 func reverse(theString: String) -> String {
     var stringReversal = ""
@@ -63,7 +68,19 @@ reverse(theString: "reverse")
 reverse(theString: "This sentence will be reversed.")
 
 
+// other solution
 
+func letsReverse(string: String) -> String {
+    var result = ""
+    
+    for character in string.characters {
+        result = String(character) + result
+    }
+    return result
+}
+
+letsReverse(string: "My oh my!")
+letsReverse(string: "Hockey starts tomorrow.")
 
 
 

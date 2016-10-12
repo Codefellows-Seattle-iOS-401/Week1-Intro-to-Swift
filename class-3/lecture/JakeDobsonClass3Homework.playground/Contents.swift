@@ -22,53 +22,75 @@ import UIKit
 
 
                 //// PROBLEM 1 \\\\
-
+// declare Identity protocol with id string
 protocol Identity {
     var id: String { get set }
+    var text: String { get set }
 }
 
                 ////PROBLEM 2 \\\\
-
+// declare text member of type string and conform to Identity protocol
 class ToDo: Identity {
-    internal var id: String = "" // required to "officially" conform, to the protocol!
-
+    var id: String = "" // required to "officially" conform, to the protocol!
     var text: String = ""
+    
+    init(id: String, text: String? = nil) {
+        self.id = id
+        self.text = text!
+    }
 }
 
                 //// PROBLEM 3 \\\\
-
+//define object store with functions
 protocol ObjectStore {
-    func add()
-    func remove()
-    func objectAtIndex()
-    func count()
-    func allObjects()
+    func add(string: String) -> [String]
+    func remove(int: Int) -> [String]
+    func objectAtIndex(index: Int) -> String
+    func count(array: [String]) -> Int
+    func allObjects(objects: [String]) -> [String]
 }
 
                 //// PROBLEM 4 \\\\
-                //// PROBLEM 5 \\\\
-
+//implement methods from ObjectStore
 class Store: ObjectStore {
-    internal func add() {
-        //
+    var arr: [String] = ["Hockey", "Soccer", "Baseball", "Football"]
+
+    func add(string: String) -> [String] {
+        arr.insert(string, at: 0)
+        return arr
+    }
+
+    func remove(int: Int) -> [String] {
+        arr.remove(at: int)
+        return arr
     }
     
-    internal func remove() {
-        //
+    func objectAtIndex(index: Int) -> String {
+        return arr[index]
     }
     
-    internal func objectAtIndex() {
-        //
+    func count(array: [String]) -> Int {
+        return arr.count
     }
     
-    internal func count() {
-        //
-    }
-    
-    internal func allObjects() {
-        //
+    func allObjects(objects: [String]) -> [String] {
+        return arr
     }
 }
+
+                //// PROBLEM 5 \\\\
+// demonstrate add/remove
+let addItem = ToDo(id: "&*HGIPI", text: "Get some shit done!")
+let text = addItem.text
+print(text)
+let store = Store()
+store.add(string: text)
+print(Store().arr)
+Store().remove(int: 1)
+print(Store().arr)
+
+
+
 
 
 

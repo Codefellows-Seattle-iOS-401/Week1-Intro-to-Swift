@@ -22,7 +22,7 @@ import UIKit
 
                 //// PROBLEM 1 \\\\
 
-var mutableArray: [String] = ["Mars", "Pluto", "Uranus", "Alaska", "absolute", "because", "Earth", "Earth"]
+var mutableArray: [String] = ["Mars", "Pluto", "Uranus", "Alaska", "absolute", "because", "Earth", "Earth", "Mars", "Mars", "Mars"]
 
 func arr(array: [String]) {
     //check if array contains "Earth"
@@ -52,7 +52,7 @@ let sum = numbers.reduce(4, add) // 4 maeans the inital value is 4 ((sum of arra
 print(sum)
 
 
-                /// PROBLEM 3 \\\\
+                //// PROBLEM 3 \\\\
 
 let person = ["firstName" : "Jake", "lastName" : "Dobson", "age" : "25"]
 let keys = Array(person.keys)
@@ -61,6 +61,8 @@ let values = Array(person.values)
 func search(aString: String) {
     if person["lastName"] == aString {
         print("success!")
+    } else {
+        print("failure!")
     }
 }
 search(aString: "loser")
@@ -89,5 +91,32 @@ repeatingWordCount(aString: "Earth")
 
 
 
+                //// PROBLEM 4 USING DICTIONARY \\\\
 
+// return max number of duplicate elements from given array
+
+func duplicateWordCount(arr: [String]) -> Int {
+    var dict: [String : Int] = [:]
+    var max = 0
+    var maxString = ""
+    for key in arr {
+        if dict[key] != nil {
+            dict[key]! += 1
+        } else {
+            dict[key] = 1
+        }
+    }
+    
+    for (k, v) in dict {
+        if v > max {
+            max = v
+            maxString = k
+        }
+        print(maxString)
+    }
+    print(dict)
+    print(max)
+    return max
+}
+duplicateWordCount(arr: mutableArray)
 
